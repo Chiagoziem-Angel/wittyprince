@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Witty Prince - Mental Models Newsletter</title>
+    
+    <style>
+        /* === RESET === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* === GLOBAL STYLES === */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Arial, sans-serif;
+            background-color: #000000;
+            color: #FFFFFF;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* === CONTAINER === */
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* === LOGO === */
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* === MAIN HEADLINE === */
+        .headline {
+            font-size: clamp(36px, 8vw, 72px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -1px;
+        }
+
+        .headline .highlight {
+            color: #7C3AED;
+        }
+
+        /* === SUBHEADLINE === */
+        .subheadline {
+            font-size: clamp(18px, 3vw, 24px);
+            color: #999999;
+            margin-bottom: 50px;
+            line-height: 1.5;
+        }
+
+        /* === EMAIL FORM === */
+        .email-form {
+            max-width: 500px;
+            margin: 0 auto 60px;
+        }
+
+        .email-input {
+            width: 100%;
+            padding: 18px 24px;
+            font-size: 16px;
+            border: 1px solid #333333;
+            border-radius: 8px;
+            background-color: #111111;
+            color: #FFFFFF;
+            margin-bottom: 15px;
+            transition: border-color 0.2s;
+        }
+
+        .email-input:focus {
+            outline: none;
+            border-color: #7C3AED;
+        }
+
+        .email-input::placeholder {
+            color: #666666;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 18px;
+            font-size: 18px;
+            font-weight: 600;
+            background-color: #7C3AED;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+
+        .submit-button:hover {
+            background-color: #6B21A8;
+            transform: translateY(-2px);
+        }
+
+        /* === DESCRIPTION === */
+        .description {
+            font-size: 16px;
+            color: #666666;
+            max-width: 600px;
+            margin: 0 auto 80px;
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding-top: 60px;
+            border-top: 1px solid #222222;
+        }
+
+        .brand-name {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #7C3AED;
+        }
+
+        /* === SOCIAL LINKS === */
+        .social-links {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .social-links a {
+            color: #666666;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover {
+            color: #7C3AED;
+        }
+
+        /* === COPYRIGHT === */
+        .copyright {
+            color: #444444;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+
+        /* === MOBILE RESPONSIVE === */
+        @media (max-width: 768px) {
+            .headline {
+                font-size: 40px;
+            }
+
+            .subheadline {
+                font-size: 18px;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- LOGO -->
+        <div class="logo">
+            <img src="./logo.png" alt="Witty Prince">
+        </div>
+
+        <!-- MAIN HEADLINE -->
+        <h1 class="headline">
+            Get every <span class="highlight">Mental Model</span> you need to build your Life, Career, or Business.
+        </h1>
+
+        <!-- SUBHEADLINE -->
+        <p class="subheadline">
+            Free Delivery to your inbox every week
+        </p>
+
+        <!-- EMAIL FORM -->
+        <div class="email-form">
+            <form action="https://wittyprince.substack.com/embed" method="get" target="_blank">
+                <input 
+                    type="email" 
+                    name="email" 
+                    placeholder="Enter your email" 
+                    class="email-input"
+                    required
+                >
+                <button type="submit" class="submit-button">
+                    Join the Waitlist
+                </button>
+            </form>
+        </div>
+
+        <!-- DESCRIPTION -->
+        <p class="description">
+            A weekly newsletter delivering the most powerful mental models, frameworks, and thinking tools used by successful founders and leaders.
+        </p>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="brand-name">Witty Prince</div>
+
+            <!-- SOCIAL LINKS -->
+            <div class="social-links">
+                <a href="https://x.com/wittyprince_" target="_blank">Twitter</a>
+                <a href="https://www.linkedin.com/in/prince-obinna" target="_blank">LinkedIn</a>
+                <a href="https://instagram.com/wittyprince_" target="_blank">Instagram</a>
+                <a href="https://tiktok.com/wittyprince_" target="_blank">TikTok</a>
+                <a href="https://youtube.com/@wittyprince" target="_blank">YouTube</a>
+                <a href="https://whatsapp.com/channel/0029VakWvA3HVvThEftuO81T" target="_blank">WhatsApp Channel</a>
+            </div>
+
+            <div class="copyright">
+                © 2025 Witty Prince. All rights reserved.
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
