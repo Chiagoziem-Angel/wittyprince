@@ -6,38 +6,48 @@
     <title>Witty Prince - Mental Models Newsletter</title>
     
     <style>
-        /* RESET */
-         {
+        /* === RESET === */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* GLOBAL STYLES */
+        /* === SMOOTH SCROLL === */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* === GLOBAL STYLES === */
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Arial, sans-serif;
             background-color: #000000;
             color: #FFFFFF;
+            line-height: 1.6;
+        }
+
+        /* === SECTION WRAPPER === */
+        section {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
 
-        /* CONTAINER */
+        /* === CONTAINER === */
         .container {
-            max-width: 700px
+            max-width: 700px;
             width: 100%;
             text-align: center;
         }
 
-        /*  LOGO */
+        /* === LOGO === */
         .logo {
-            width: 200px;
-            height: 200px;
-            opacity: 0.95;
+            width: 80px;
+            height: 80px;
             margin: 0 auto 30px;
+            opacity: 0.95;
         }
 
         .logo img {
@@ -46,7 +56,7 @@
             object-fit: contain;
         }
 
-        /* MAIN HEADLINE */
+        /* === MAIN HEADLINE === */
         .headline {
             font-size: clamp(32px, 7vw, 60px);
             font-weight: 700;
@@ -56,10 +66,10 @@
         }
 
         .headline .highlight {
-            color: #D710D6;
+            color: #9159C0;
         }
 
-        /*  SUBHEADLINE */
+        /* === SUBHEADLINE === */
         .subheadline {
             font-size: clamp(16px, 3vw, 20px);
             color: #9CA3AF;
@@ -67,87 +77,179 @@
             line-height: 1.5;
         }
 
-        /* EMAIL FORM */
-        .email-form {
+        /* === MAILERLITE FORM CONTAINER === */
+        .email-form-container {
             max-width: 480px;
+            width: 100%;
             margin: 0 auto 40px;
-            width: 100%
         }
 
-        .email-input {
+        /* Custom styling for MailerLite embedded form */
+        .email-form-container iframe {
             width: 100%;
-            padding: 16px 20px;
-            font-size: 16px;
-            border: 1px solid #333333;
-            border-radius: 8px;
-            background-color: #1A1A1A;
-            color: #FFFFFF;
-            margin-bottom: 12px;
-            transition: border-color 0.2s;
-            box sizing: border-box;
-        }
-
-        .email-input:focus {
-            outline: none;
-            border-color:#D710D6;
-        }
-
-        .email-input::placeholder {
-            color: #666666;
-        }
-
-        .submit-button {
-            width: 100%;
-            padding: 16px;
-            font-size: 17px;
-            font-weight: 600;
-            background-color: #D710D6;
-            color: #FFFFFF;
             border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.2s, transform 0.2s;
-            box sizing: border-box;
         }
 
-        .submit-button:hover {
-            background-color: #6B21A8;
-            transform: translateY(-1px);
+        /* If using custom form (not iframe) */
+        .ml-form-embedWrapper {
+            max-width: 480px;
+            margin: 0 auto;
         }
-        .submit-button:active {
-            transform: translateY(0);
-        }
-        /*  DESCRIPTION */
+
+        /* === DESCRIPTION === */
         .description {
             font-size: 15px;
-            color: #666666;
+            color: #6B7280;
             max-width: 550px;
-            margin: 0 auto 60px;
+            margin: 0 auto 40px;
             line-height: 1.6;
             padding: 0 10px;
         }
 
-        .divider {
-            width: 100%;
-            height:1px;
-            background-color: #222222;
-            margin: 50px 0 40px;
+        /* === SCROLL INDICATOR === */
+        .scroll-indicator {
+            margin-top: 40px;
+            color: #666666;
+            font-size: 14px;
+            animation: bounce 2s infinite;
         }
-            
-            /* FOOTER */
-        footer {
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* === ABOUT SECTION === */
+        .about-section {
+            background-color: #0A0A0A;
             border-top: 1px solid #222222;
         }
-        
-/*--- Not needed
-        .brand-name {
+
+        .about-container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .about-title {
+            font-size: clamp(32px, 6vw, 48px);
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .about-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 40px;
+            display: block;
+            border: 4px solid #9159c0;
+        }
+
+        .about-intro {
             font-size: 20px;
             font-weight: 600;
             margin-bottom: 30px;
-            color: #7C3AED;
+            text-align: center;
+            color: #9159C0;
         }
---*/
-        /* SOCIAL LINKS */
+
+        .about-content {
+            text-align: left;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #D1D5DB;
+            margin-bottom: 20px;
+        }
+
+        .timeline {
+            margin: 40px 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 25px;
+            padding-left: 30px;
+            border-left: 2px solid #333333;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #9159C0;
+        }
+
+        .timeline-age {
+            font-weight: 700;
+            color: #9159C0;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .timeline-text {
+            color: #D1D5DB;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .about-closing {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #D1D5DB;
+        }
+
+        .about-cta {
+            margin-top: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #FFFFFF;
+        }
+
+        /* === DIVIDER === */
+        .divider {
+            width: 100%;
+            height: 1px;
+            background-color: #222222;
+            margin: 50px 0;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #222222;
+        }
+
+        .brand-name {
+            margin-bottom: 30px;
+        }
+
+        .brand-name img {
+            width: 60px;
+            height: 60px;
+            opacity: 0.9;
+        }
+
         .social-links {
             display: flex;
             gap: 20px;
@@ -157,27 +259,26 @@
         }
 
         .social-links a {
-            color: #666666;
+            color: #6B7280;
             text-decoration: none;
             font-size: 14px;
             transition: color 0.2s;
         }
 
         .social-links a:hover {
-            color: #D710D6;
+            color: #D946EF;
         }
 
-        /* COPYRIGHT */
         .copyright {
-            color: #444444;
+            color: #4B5563;
             font-size: 13px;
             margin-top: 20px;
         }
 
-        /* MOBILE RESPONSIVE */
+        /* === MOBILE RESPONSIVE === */
         @media (max-width: 768px) {
-            body {
-                padding: 30px 15px;
+            section {
+                padding: 40px 15px;
             }
 
             .headline {
@@ -185,37 +286,13 @@
                 margin-bottom: 18px;
             }
 
-            .subheadline {
-                font-size: 16px;
-                margin-bottom: 35px;
+            .about-photo {
+                width: 150px;
+                height: 150px;
             }
 
-            .email-form-container {
-                max-width: 100%;
-            }
-
-            .description {
-                font-size: 14px;
-                margin-bottom: 50px;
-            }
-
-            .social-links {
-                gap: 18px;
-            }
-
-            .social-links a {
-                font-size: 13px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .headline {
-                font-size: 30px;
-            }
-
-            .logo {
-                width: 60px;
-                height: 60px;
+            .timeline-item {
+                padding-left: 20px;
             }
 
             .social-links {
@@ -227,67 +304,353 @@
 </head>
 <body>
 
-    <div class="container">
-        <!-- LOGO -->
-        <div class="logo">
-            <img src="https://raw.githubusercontent.com/Chiagoziem-Angel/wittyprince/main/IMG_8599.PNG" alt="Witty Prince">
-        </div>
+    <!-- HERO SECTION -->
+    <section id="home">
+        <div class="container">
+            <!-- LOGO -->
+            <div class="logo">
+                <img src="./logo.png" alt="Witty Prince">
+            </div>
 
-        <!-- MAIN HEADLINE -->
-        <h1 class="headline">
-            Get every <span class="highlight">Mental Model</span> you need to build your Life, Career, or Business.
-        </h1>
+            <!-- MAIN HEADLINE -->
+            <h1 class="headline">
+                Get every <span class="highlight">Mental Model</span> you need to build your Life, Career, or Business.
+            </h1>
 
-        <!-- SUBHEADLINE -->
-        <p class="subheadline">
-            Free Delivery to your inbox every week
-        </p>
+            <!-- SUBHEADLINE -->
+            <p class="subheadline">
+                Free Delivery to your inbox every week
+            </p>
 
-        <!-- EMAIL FORM -->
-        <div class="email-form">
-            <form action="https://wittyprince.substack.com/subscribe" method="get" target="_blank">
-                <input 
-                    type="email" 
-                    name="email" 
-                    placeholder="Enter your email" 
-                    class="email-input"
-                    required
-                >
-                <button type="submit" class="submit-button">
-                    Join the Waitlist
-                </button>
-            </form>
-        </div>
+            <!-- MAILERLITE FORM -->
+            <div class="email-form-container">
+                <!-- 
+                OPTION 1: EMBED MAILERLITE FORM
+                Go to MailerLite → Forms → Get embed code → Paste here
+                -->
+                
+                <!-- OPTION 2: CUSTOM FORM THAT SUBMITS TO MAILERLITE -->
+                <!-- Replace GROUP_ID and ACCOUNT_ID with actual values from MailerLite -->
+                <div class="ml-embedded" data-form="x2LSth"></div>
+                
+                <!-- OPTION 3: SIMPLE LINK TO MAILERLITE LANDING PAGE -->
+                <!-- If Prince has a MailerLite landing page URL, use this: -->
+                <!--
+                <a href="MAILERLITE_LANDING_PAGE_URL" target="_blank" class="cta-button">
+                    Give Me The Models
+                </a>
+                -->
+
+                <!-- TEMPORARY PLACEHOLDER FORM (Replace with actual MailerLite)
+                <form id="subscribeForm" onsubmit="handleSubscribe(event)">
+                    <input 
+                        type="email" 
+                        id="emailInput"
+                        name="email" 
+                        placeholder="Take My Email" 
+                        required
+                        style="
+                            width: 100%;
+                            padding: 16px 20px;
+                            font-size: 16px;
+                            border: 1px solid #333333;
+                            border-radius: 8px;
+                            background-color: #1A1A1A;
+                            color: #FFFFFF;
+                            margin-bottom: 12px;
+                        "
+                    >
+                    <button 
+                        type="submit"
+                        style="
+                            width: 100%;
+                            padding: 16px;
+                            font-size: 17px;
+                            font-weight: 600;
+                            background-color: #D946EF;
+                            color: #FFFFFF;
+                            border: none;
+                            border-radius: 8px;
+                            cursor: pointer;
+                        "
+                    >
+                        Give Me The Models
+                    </button>
+                </form>
+                -->
 
     
-        <p class="description">
-            A weekly newsletter delivering the most powerful mental models, frameworks, and thinking tools used by successful founders and leaders.
-        </p> 
-        
-        <div class="divider"></div>
+    <div id="mlb2-32260597" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-32260597">
+      <div class="ml-form-align-center ">
+        <div class="ml-form-embedWrapper embedForm">
 
-        <!-- FOOTER -->
-        <footer>
-        <!-- LOGO -->
-        <div class="logo">
-            <img src="https://raw.githubusercontent.com/Chiagoziem-Angel/wittyprince/main/IMG_8599.PNG" alt="Witty Prince">
+          
+          
+
+          <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+
+            <div class="ml-form-embedContent" style="margin-bottom: 0px; ">
+              
+            </div>
+
+            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1866704/forms/168688932453614677/subscribe" data-code="" method="post" target="_blank">
+              <div class="ml-form-formContent">
+                
+
+                  
+                  <div class="ml-form-fieldRow ml-last-item">
+                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+
+                      
+
+
+                      <!-- input -->
+                      <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Take My Email" autocomplete="email">
+                      <!-- /input -->
+
+                      <!-- textarea -->
+                      
+                      <!-- /textarea -->
+
+                      <!-- select -->
+                      
+                      <!-- /select -->
+
+                      <!-- checkboxes -->
+            
+            <!-- /checkboxes -->
+
+                      <!-- radio -->
+                      
+                      <!-- /radio -->
+
+                      <!-- countries -->
+                      
+                      <!-- /countries -->
+
+
+
+
+
+                    </div>
+                  </div>
+                
+              </div>
+
+              
+
+              <!-- Privacy policy -->
+              
+              <!-- /Privacy policy -->
+
+              
+              <input type="hidden" name="ml-submit" value="1">
+
+              <div class="ml-form-embedSubmit">
+                
+                  <button type="submit" class="primary">Give Me The Models</button>
+                
+                <button disabled="disabled" style="display: none;" type="button" class="loading">
+                  <div class="ml-form-embedSubmitLoad"></div>
+                  <span class="sr-only">Loading...</span>
+                </button>
+              </div>
+
+              
+              <input type="hidden" name="anticsrf" value="true">
+            </form>
+          </div>
+
+          <div class="ml-form-successBody row-success" style="display: none">
+
+            <div class="ml-form-successContent">
+              
+                <h4>You're in!</h4>
+                <p><span style="font-size: 16px;">You have successfully joined our subscriber list.</span></p>
+<p><span style="font-size: 16px;">Expect your first email in a few minutes.</span></p>
+<p><span style="font-size: 16px;">Do well to check your Updates, Spam, or Promotions Folder in case you do not see your email in your primary inbox.</span></p>
+<p><span style="font-size: 16px;">Do well to move it to Primary and star it once you see it so that you can be receiving the emails there&nbsp;directly.</span></p>
+              
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+                
+                <div id="formMessage" style="margin-top: 10px; display: none;"></div>
+            </div>
+
+            
+            <p class="description">
+                A weekly newsletter delivering the most powerful mental models, frameworks, and thinking tools used by successful founders and leaders.
+            </p>
+
+        
+            <div class="scroll-indicator">
+                ↓ Scroll to learn more about me
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <h2 class="about-title">Who I Am</h2>
+
+            <!-- PHOTO -->
+            <img src="./prince-photo.jpg" alt="Prince Obinna" class="about-photo">
+
+            <div class="about-intro">
+                Started building my career in 2017 at Age 16.
+            </div>
+
+            <div class="about-content">
+                <p><strong>9 Years Down the Line, I have:</strong></p>
+                <p>Started 11 Business Models (6 of which Failed)</p>
+                <p>Currently leading 5 of them: 3 B2B businesses and 2 B2C Businesses.</p>
+
+                <!-- TIMELINE -->
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-age">Age 16</div>
+                        <div class="timeline-text">Got into University and quickly started honing his childhood writing skills</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-age">Age 17</div>
+                        <div class="timeline-text">Focused on Service and was appointed a Leader in Two Organizations in school</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-age">Age 18</div>
+                        <div class="timeline-text">Volunteered for and became a Team leader in 3 more Organizations</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-age">Age 19</div>
+                        <div class="timeline-text">Started facing financial issues and went into Professional Freelancing as a B2B Content Writer</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-age">Age 20</div>
+                        <div class="timeline-text">Got broke and then started his first business, a digital Agency. The business failed, and he painfully went back to learning: took 67+ courses in 3 months (got 34 certifications)</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-age">Age 21</div>
+                        <div class="timeline-text">With so much more knowledge, started building a Career as a manager (Content Marketing Manager); also got into Web3, and made his First Million</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-age">Age 22</div>
+                        <div class="timeline-text">Built two more business models, both were successful for a while but failed after some time. Learnt a lot of lessons this year and lost all his gadgets to Armed Robbers</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-age">Age 23</div>
+                        <div class="timeline-text">Restarted from Scratch and built multiple businesses in web3, while also running a successful Writing career and teaching hundreds of people monthly on WhatsApp & Telegram</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-age">Age 24</div>
+                        <div class="timeline-text">Faced a financial crisis as 3 of his wallets were hacked, lost millions of Naira, but bounced back quickly as he had so many Systems to bring back income. Hosted Financial Conferences in two states of his Country, Nigeria. Also got his first International Speaking Engagement (Rwanda)</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-age">Age 25</div>
+                        <div class="timeline-text">Became Restless as he seemed to have peaked at a level in business and left the Country to Learn More on how to build and Scale Tech businesses at Network school - A Crypto, investment, and AI society based in Asia</div>
+                    </div>
+                </div>
+
+                <div class="about-closing">
+                    <p>With the newfound knowledge in Asia, he quit Web3 to focus full-time on investing, Capitalism, and His Personal Brand.</p>
+                    <p>Built more business models in Agriculture, Education, and Real Estate.</p>
+                    <p><strong>Now locked in on scaling them.</strong></p>
+                    
+                    <p style="margin-top: 30px;">Thanks for reading so far.</p>
+                    <p>I intend to start documenting my Journey publicly from now onwards: I'm 9 Years in, and it's been a Crazy ride.</p>
+                    
+                    <div class="about-cta">
+                        Follow me to share in my story, the Highs, Lows, and everything in between.
+                    </div>
+                    
+                    <p style="margin-top: 20px; font-style: italic; color: #9CA3AF;">We are all in the middle of writing our own story.</p>
+                    <p style="font-style: italic; color: #9CA3AF;">Cheers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="brand-name">
+            <img src="./logo.png" alt="Witty Prince">
         </div>
 
-            <!-- SOCIAL LINKS -->
-            <div class="social-links">
-                <a href="https://x.com/wittyprince_" target="_blank">Twitter</a>
-                <a href="https://www.linkedin.com/in/prince-obinna" target="_blank">LinkedIn</a>
-                <a href="https://instagram.com/wittyprince_" target="_blank">Instagram</a>
-                <a href="https://tiktok.com/wittyprince_" target="_blank">TikTok</a>
-                <a href="https://youtube.com/@wittyprince" target="_blank">YouTube</a>
-                <a href="https://whatsapp.com/channel/0029VakWvA3HVvThEftuO81T" target="_blank">WhatsApp Channel</a>
-            </div>
+        <div class="social-links">
+            <a href="https://x.com/wittyprince_" target="_blank">Twitter</a>
+            <a href="https://www.linkedin.com/in/prince-obinna" target="_blank">LinkedIn</a>
+            <a href="https://instagram.com/wittyprince_" target="_blank">Instagram</a>
+            <a href="https://tiktok.com/wittyprince_" target="_blank">TikTok</a>
+            <a href="https://youtube.com/@wittyprince" target="_blank">YouTube</a>
+            <a href="https://whatsapp.com/channel/0029VakWvA3HVvThEftuO81T" target="_blank">WhatsApp</a>
+        </div>
 
-            <div class="copyright">
-                © 2025 Witty Prince. All rights reserved.
-            </div>
-        </footer>
-    </div>
+        <div class="copyright">
+            © 2025 Witty Prince. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR FORM HANDLING -->
+    <script>
+        function handleSubscribe(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('emailInput').value;
+            const messageDiv = document.getElementById('formMessage');
+            
+            // TEMPORARY: Just show message
+            // REPLACE THIS with actual MailerLite API call or form submission
+      function ml_webform_success_32260597() {
+      var $ = ml_jQuery || jQuery;
+      $('.ml-subscribe-form-32260597 .row-success').show();
+      $('.ml-subscribe-form-32260597 .row-form').hide();
+    }
+            // Clear form
+            document.getElementById('subscribeForm').reset();
+            
+            // TODO: Connect to MailerLite API
+            // fetch('YOUR_MAILERLITE_API_ENDPOINT', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify({ email: email })
+            // })
+        }
+
+       // <!-- MailerLite Universal -->
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '1866704');
+// <!-- End MailerLite Universal -->
+
+        // Load MailerLite script if using embedded form
+        // (function(m,a,i,l,e,r){ m['MailerLiteObject']=e;function f(){
+        // var c={ a:arguments,q:[]};var r=this.push(c);return "number"!=typeof r?r:f.bind(c.q);}
+        // f.q=f.q||[];m[e]=m[e]||f.bind(f.q);m[e].q=m[e].q||f.q;r=a.createElement(i);
+        // var _=a.getElementsByTagName(i)[0];r.async=1;r.src=l+'?v'+(~~(new Date().getTime()/1000000));
+        // _.parentNode.insertBefore(r,_);})(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
+        
+        // ml('account', 'YOUR_ACCOUNT_ID');
+    </script>
+    <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
+        <script>
+            fetch("https://assets.mailerlite.com/jsonp/1866704/forms/168688932453614677/takel")
+        </script>
 
 </body>
 </html>
